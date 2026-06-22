@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询 · 关于华体会的一些笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f3ef;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      line-height: 1.75;
+      color: #2e2b28;
+    }
+
+    .hero {
+      background: #1f2a38;
+      background-image: radial-gradient(circle at 20% 40%, #2f3f4e 0%, #131b24 100%);
+      color: #e3ddd3;
+      padding: 4rem 2rem 3.2rem;
+      text-align: center;
+      border-bottom: 1px solid #465a6b;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+      color: #ede7dd;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #b0aa9f;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem 4rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: #8b8276;
+      border-bottom: 1px dashed #d6cec1;
+      padding-bottom: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .article-meta span {
+      position: relative;
+    }
+
+    .article-meta span + span::before {
+      content: "·";
+      position: absolute;
+      left: -0.9rem;
+      color: #c4b9ab;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 450;
+      margin: 2.2rem 0 0.8rem;
+      color: #2b3a47;
+      letter-spacing: 0.5px;
+      border-left: 4px solid #b08968;
+      padding-left: 1rem;
+    }
+
+    p {
+      margin: 1.1rem 0;
+      text-align: justify;
+    }
+
+    a {
+      color: #8b5a2b;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #a47a4e;
+      border-bottom-color: #b08968;
+    }
+
+    .pull-quote {
+      margin: 2rem 0 1.8rem;
+      padding: 1.2rem 1.8rem;
+      background: #ece8df;
+      border-left: 5px solid #b08968;
+      font-style: italic;
+      color: #3d3530;
+      border-radius: 0 6px 6px 0;
+      position: relative;
+    }
+
+    .pull-quote::before {
+      content: "📌";
+      position: absolute;
+      left: -1rem;
+      top: -0.2rem;
+      font-size: 1.2rem;
+      font-style: normal;
+    }
+
+    .pull-quote p {
+      margin: 0.2rem 0;
+    }
+
+    .faq-summary {
+      background: #f0ece4;
+      border-radius: 12px;
+      padding: 1.6rem 2rem 1.8rem;
+      margin: 2.5rem 0 1.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .faq-summary h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2b3a47;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid #ddd6ca;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      min-width: 4.2rem;
+      font-weight: 550;
+      color: #6a5e4f;
+    }
+
+    .faq-a {
+      color: #3e3730;
+    }
+
+    .visit-note {
+      margin-top: 2.8rem;
+      padding: 1.5rem 0;
+      text-align: center;
+      border-top: 1px solid #ddd6ca;
+      font-size: 0.95rem;
+      color: #6b6258;
+    }
+
+    .visit-note a {
+      font-weight: 600;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0d9ce;
+      margin: 1.8rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .container {
+        padding: 2rem 1.2rem 3rem;
+      }
+
+      .article-meta {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .article-meta span + span::before {
+        display: none;
+      }
+
+      .pull-quote {
+        padding: 1rem 1.2rem;
+      }
+
+      .faq-summary {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .faq-item {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .faq-q {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>一些零散的查阅笔记</h1>
+    <div class="sub">对照 · 延伸 · 日常记录</div>
+  </header>
+
+  <main class="container">
+    <div class="article-meta">
+      <span>2025 · 春</span>
+      <span>话题 / 查询 · 华体会</span>
+      <span>阅读约 4 分钟</span>
+    </div>
+
+    <h2>查询的起点</h2>
+    <p>很多时候，打开一个网站只是为了验证一个印象，或者补全一段模糊的记忆。我记不清最早是在哪次讨论里听到 <a href="https://cn-main-huatihui.com">华体会</a> 这个名字的，只记得后来断断续续查过几次，每次都能找到一些不同的侧面。这种查询本身没什么负担，像是随手翻开一本旧书，目光扫过几行，然后合上。</p>
+
+    <h2>对照与关联</h2>
+    <p>网络上的信息往往重复，但偶尔也会出现一些让人停下来的段落。比如某个介绍里提到平台的背景，另一篇报道则侧重它的服务方式——两者拼在一起，才能看清全貌。我也在几个论坛的帖子和问答里看到过关于 <a href="https://cn-main-huatihui.com">华体会</a> 的零星讨论，有人问使用体验，有人补充细节，读起来像是拼图。</p>
+
+    <p>这种对照的过程，其实比得到答案更有意思。你发现不同来源的表述之间总有微妙的出入，而正是这些出入，让查证变成了一件需要耐心的事。</p>
+
+    <div class="pull-quote">
+      <p>“查询不是终点，而是一扇门——推开之后，还有走廊和庭院。”</p>
+    </div>
+
+    <h2>延伸阅读的习惯</h2>
+    <p>后来我养成了一个习惯：查一个名称的时候，顺手看看它周围的信息。比如从 <a href="https://cn-main-huatihui.com">华体会</a> 出发，可能关联到同类型服务的对比、用户社群的讨论、以及一些第三方整理的长文。这些延伸内容往往比核心页面的介绍更生动，也更贴近使用者的真实感受。</p>
+
+    <p>当然，延伸阅读也需要分寸。信息太多的时候，反而容易迷失。我通常只读两到三篇长文，再扫几眼评论区的留言，然后就停下来——让那些内容在脑子里浮一会儿。</p>
+
+    <h2>FAQ 摘要 · 从日常查询中整理</h2>
+    <div class="faq-summary">
+      <h3>查询中遇到的高频问题</h3>
+      <div class="faq-item">
+        <div class="faq-q">Q:</div>
+        <div class="faq-a">不同来源的信息不一致，该信哪一个？</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">A:</div>
+        <div class="faq-a">优先看官方或运营方直接发布的内容，再结合第三方用户的长帖比对。没有绝对的标准，但多查一遍总比少查好。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q:</div>
+        <div class="faq-a">查询结果太多，如何快速筛选？</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">A:</div>
+        <div class="faq-a">只看近一年内的内容，避开纯复制粘贴的短消息。如果某个说法出现在三个以上独立来源里，基本可以采信。</div>
+      </div>
+    </div>
+
+    <h2>关于访问的一点想法</h2>
+    <p>最后想说，查询和访问其实是两回事。查询是浏览、对照、判断；访问则意味着更进一步的动作。如果你在查询过程中产生了直接了解的念头，那么通过 <a href="https://cn-main-huatihui.com">华体会</a> 这个地址，可以进入它自己的页面。但在此之前，不妨先把刚才整理的线索再看一遍——带着问题去，往往比空手去更有收获。</p>
+
+    <hr />
+
+    <div class="visit-note">
+      <p>如果你也想从查询开始，不妨试试搜索 <a href="https://cn-main-huatihui.com">华体会</a>，看看能拼出怎样的图景。</p>
+    </div>
+  </main>
+</body>
+</html>
