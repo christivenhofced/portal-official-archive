@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 日常叙述与对照阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f3ef;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2d2a27;
+            line-height: 1.8;
+            padding: 2rem 1.5rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* Hero 区 — 杂志式留白与窄栏 */
+        .hero {
+            margin: 1.5rem 0 3rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #d9d2c9;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #9b8f82;
+            margin-bottom: 0.75rem;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #1f1b17;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+            word-break: break-word;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #877b6f;
+            border-left: 3px solid #c7b7a8;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* 背景说明卡片 — 仿引用框 */
+        .context-card {
+            background: #f0ebe4;
+            border-radius: 0 20px 20px 20px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0 2.2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border-left: 4px solid #b8aa9b;
+        }
+
+        .context-card p {
+            font-size: 1.05rem;
+            color: #2b2722;
+        }
+
+        .context-card .sig {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #8f8377;
+            letter-spacing: 0.03em;
+        }
+
+        /* 正文段落 — 三段自然介绍 */
+        .intro-section {
+            margin: 2.4rem 0;
+        }
+
+        .intro-block {
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-block h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3a332d;
+            border-bottom: 1px dashed #d5ccc3;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .intro-block p {
+            margin-bottom: 0.9rem;
+            text-align: justify;
+        }
+
+        .intro-block .highlight-box {
+            background: #f9f5f0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.2rem 0 0.5rem;
+            border: 1px solid #e2d8ce;
+            font-size: 0.95rem;
+        }
+
+        .intro-block .highlight-box strong {
+            color: #4f3f31;
+            font-weight: 500;
+        }
+
+        /* 引用块 */
+        blockquote {
+            background: #ece6de;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 12px 12px 0;
+            border-left: 4px solid #ae9d8b;
+            font-style: normal;
+            color: #2f2923;
+        }
+
+        blockquote p {
+            margin-bottom: 0.4rem;
+        }
+
+        blockquote footer {
+            font-size: 0.85rem;
+            color: #7c7064;
+            margin-top: 0.4rem;
+        }
+
+        /* 提示框——页尾访问提示 */
+        .visit-tip {
+            background: #e7dfd6;
+            padding: 1.5rem 1.8rem;
+            border-radius: 30px 30px 30px 8px;
+            margin-top: 2.8rem;
+            border: 1px solid #d2c6ba;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.2rem;
+        }
+
+        .visit-tip p {
+            font-size: 1rem;
+            color: #2d2721;
+            margin: 0;
+            display: inline;
+        }
+
+        .visit-tip a {
+            color: #4d3b2b;
+            background: transparent;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b3a08e;
+            font-weight: 400;
+            transition: background 0.15s, color 0.15s;
+            padding: 0 2px;
+        }
+
+        .visit-tip a:hover {
+            background: #cbb9a8;
+            color: #1f1711;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        /* 分隔装饰 */
+        .divider-dot {
+            text-align: center;
+            color: #c7bbb0;
+            letter-spacing: 0.8rem;
+            font-size: 0.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1.2rem 1rem 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .context-card {
+                padding: 1.2rem 1.3rem;
+                margin: 1.8rem 0;
+            }
+
+            .intro-block h2 {
+                font-size: 1.1rem;
+            }
+
+            .visit-tip {
+                padding: 1rem 1.2rem;
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        footer {
+            margin-top: 2.8rem;
+            font-size: 0.75rem;
+            color: #a29588;
+            text-align: center;
+            border-top: 1px solid #e0d7ce;
+            padding-top: 1.8rem;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-label">日常 · 对照 · 延伸</div>
+            <h1>华体会</h1>
+            <div class="sub">一本可以随时翻阅的“参照笔记”</div>
+        </div>
+
+        <!-- 背景说明：杂志式卡片 -->
+        <div class="context-card">
+            <p>很多时候我们打开一个网站，并不是为了完成某个特定任务，而是想查一个名词、对照一段说法、或者把零散的信息串联起来。华体会提供的正是这样一种<strong>可翻阅、可停留</strong>的文本土壤——它不急于给出结论，而是把材料摊开，让你自己找到线索。</p>
+            <span class="sig">—— 从日常查询到延伸阅读，中间只差一次点开。</span>
+        </div>
+
+        <!-- 三段自然介绍 -->
+        <div class="intro-section">
+
+            <div class="intro-block">
+                <h2>❶ 翻看，像翻杂志一样</h2>
+                <p>我们习惯了搜索、定位、离开。但有些内容值得慢下来——华体会的结构更像一本专题杂志：每个页面围绕一个主题，里面有多角度的摘录、背景和关联段落。你可以从任意一段开始读，也可以跳着看。没有固定入口，也不需要从头到尾。</p>
+                <div class="highlight-box">
+                    <strong>📌 一个使用场景：</strong> 朋友聊到某个文化现象，你一时想不起确切表述。打开华体会找到相关主题页，扫一眼不同视角的叙述，很快就有了谈话的抓手。
+                </div>
+            </div>
+
+            <div class="intro-block">
+                <h2>❷ 对照，不只有一种说法</h2>
+                <p>同一个事件、同一个概念，不同材料会有不同侧重。华体会在页面里并置了多种来源的陈述——有正式定义，也有个人笔记式的解释；有数据，也有比喻。这种对照不是为了比出对错，而是让读者看到信息的<em>层次</em>和<em>棱角</em>。</p>
+                <blockquote>
+                    <p>“当你看到两种描述放在一起，原先模糊的理解往往变得具体。不是因为你得到了标准答案，而是因为你看到了边界。”</p>
+                    <footer>—— 一位经常使用华体会的读者留言</footer>
+                </blockquote>
+            </div>
+
+            <div class="intro-block">
+                <h2>❸ 延伸，不打断思路</h2>
+                <p>大多数网站用超链接把你带离当前页面。但在华体会，相关的延伸内容以内嵌引用、侧注和段落附录的方式呈现。你不需要跳转就能看到“这个话题还可以怎么理解”。读完一段，自然过渡到下一段。信息之间彼此对话，但阅读节奏由你掌控。</p>
+                <div class="highlight-box" style="background: #f3ede6;">
+                    <strong>📎 举个例子：</strong> 你在读一篇关于“城市空间”的页面，旁边会有一段来自另一篇文章的短评，或者一张手绘示意图的文字描述。你不需要切换窗口，视线平移就能完成一次小小的知识漫游。
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider-dot">· · · · · · · ·</div>
+
+        <!-- 页尾访问提示：自然嵌入链接 -->
+        <div class="visit-tip">
+            <p>如果你也喜欢这种不慌不忙的阅读方式，不妨去</p>
+            <a href="https://now-huatihui.com">华体会</a>
+            <p>随手翻几页。那里没有推送，没有排行榜，只有一篇一篇等待被关联的内容。也许某一页刚好回应了你最近在琢磨的事。</p>
+        </div>
+
+        <!-- 简短 FAQ 摘要（杂志常见版面） -->
+        <div style="margin-top: 2.2rem; background: #fcf9f5; padding: 1.2rem 1.5rem; border-radius: 16px; border: 1px solid #e7ddd2;">
+            <p style="font-size: 0.9rem; color: #574e45; margin-bottom: 0.5rem; letter-spacing: 0.03em;"><strong>常见疑问</strong>  ·  来自新读者</p>
+            <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #3f3832;">
+                <li style="margin-bottom: 0.3rem;">▸ 页面会经常更新吗？—— 内容不定期补充，以专题方式累积。</li>
+                <li style="margin-bottom: 0.3rem;">▸ 需要注册或登录？—— 不需要，华体会对所有访客开放阅读。</li>
+                <li>▸ 可以引用页面里的内容吗？—— 可以，标注来源即可。</li>
+            </ul>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            华体会 · 日常叙述与对照阅读
+        </footer>
+
+    </div>
+</body>
+</html>
